@@ -206,3 +206,42 @@ body.viewer-open { overflow: hidden; }
 .hero-intro::after { content: ""; display: block; width: 125px; height: 24px; margin: 3px 0 0 auto; background: url("assets/extracted/accent-brush.svg") center/contain no-repeat; }
 @media (max-width: 1000px) and (min-width: 701px) { .actions { gap: 8px; } .actions .button { min-width: 90px; padding-inline: 10px; font-size: 17px; } }
 @media (max-width: 700px) { .actions { gap: 8px; margin-top: 10px; } .actions .button { min-width: 0; flex: 1; gap: 7px; padding: 9px 8px; font-size: 17px; } .actions .button img { width: 21px; height: 21px; } .hero-art { margin: 14px auto 8px; } }
+
+/* Resume content follows the existing paper and ink layout. */
+.availability { color: var(--quiet); font: 14px/1.8 var(--sans); margin-top: 8px; }
+.project-copy .project-meta { color: var(--quiet); font: 12px/1.8 var(--sans); margin-bottom: 10px; }
+.project-source { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-size: 14px; }
+.skills, .education, .contact { padding-top: 16px; }
+.skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+.skill-grid article { padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.skill-grid h3, .education h3 { font: 700 24px/1.5 var(--serif); }
+.skill-grid p { color: var(--quiet); font: 14px/1.9 var(--sans); margin-top: 8px; }
+.skill-grid .skill-keywords { color: var(--accent); font-size: 13px; }
+.stack-context { padding-block: 16px 28px; color: var(--quiet); font: 13px/1.9 var(--sans); }
+.education-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; padding-block: 16px 34px; }
+.education h3 span { color: var(--quiet); font-size: 17px; margin-left: 12px; }
+.education-content p { color: var(--quiet); font: 14px/1.9 var(--sans); margin-top: 5px; }
+.school-field { min-width: 120px; }
+.school-field dt { color: var(--quiet); font-weight: 400; }
+.contact { padding-bottom: 40px; }
+.contact-intro { color: var(--quiet); }
+.contact-links { display: flex; flex-wrap: wrap; gap: 12px 48px; margin-top: 16px; }
+.contact-links a { display: flex; flex-direction: column; justify-content: center; min-height: 60px; text-decoration: none; overflow-wrap: anywhere; font: 18px/1.7 var(--sans); }
+.contact-links span { font-size: 12px; color: var(--quiet); }
+@media (max-width: 700px) {
+  nav { gap: 8px; }
+  nav::before { content: none; }
+  .availability { font-size: 12px; }
+  .project-copy .project-meta { grid-column: 2; grid-row: 2; margin-bottom: 0; font-size: 11px; }
+  .project-copy > p:not(.project-meta) { grid-row: 3; }
+  .project-copy .tags { grid-row: 4; }
+  .project-visual { grid-row: 5; }
+  .project-copy > details { grid-row: 6; }
+  .skill-grid { grid-template-columns: 1fr; gap: 0; }
+  .skill-grid h3, .education h3 { font-size: 21px; }
+  .skill-grid article { padding-block: 16px; }
+  .education h3 span { font-size: 14px; }
+  .contact-intro { font-size: 14px; }
+  .contact-links { gap: 12px 24px; }
+  .contact-links a { font-size: 16px; }
+}
