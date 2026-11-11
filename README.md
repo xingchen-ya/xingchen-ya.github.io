@@ -32,3 +32,9 @@
 - `index.html` 保存自我介绍和项目经历。团队仓库仅列链接，具体个人职责确认后再补充。
 - `assets/` 保存公开展示的图片及简历 PDF。当前 PDF 是依据已提供经历制作的项目版，可用正式公开版替换同名文件。
 - Pages 只提供静态托管。数据库、登录后台和私有上传可接独立服务。首版通过 GitHub 仓库维护文件。
+
+## 透明素材
+
+原图拆分素材位于 assets/extracted/，共 3 张 PNG 和 9 个 SVG，合计约 290 KiB。assets-preview.html 提供棋盘、纸色和深色背景预览。
+
+山水与笔记本使用内置 imagegen 辅助提取，可能存在细节重绘；笔记本仅为示意素材。主页面接入透明山水与 SVG 按钮，项目区继续使用项目截图。通用图标与笔画为 SVG 重建，GitHub 图标来自 Bootstrap Icons，MIT 许可见 assets/extracted/LICENSE-icons.txt。

@@ -193,3 +193,16 @@ body.viewer-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Transparent illustration and vector buttons extracted from the supplied reference. */
+.actions { gap: 12px; margin-top: 20px; }
+.actions .button { justify-content: center; gap: 10px; min-width: 125px; padding: 9px 18px; border: 1px solid #8d7c68; border-radius: 9px; color: var(--ink); font: 700 20px/1.4 var(--serif); transition: background .16s ease, transform .16s ease; }
+.actions .button img { width: 24px; height: 24px; flex: none; }
+.actions .button::after { content: none; }
+.actions .button:hover { background: #f1dfc5; }
+.actions .primary { color: #fff8ee; background: #d9500e; border-color: #d9500e; }
+.actions .primary:hover { background: #b54009; border-color: #b54009; }
+.hero-intro { width: fit-content; max-width: 100%; }
+.hero-intro::after { content: ""; display: block; width: 125px; height: 24px; margin: 3px 0 0 auto; background: url("assets/extracted/accent-brush.svg") center/contain no-repeat; }
+@media (max-width: 1000px) and (min-width: 701px) { .actions { gap: 8px; } .actions .button { min-width: 90px; padding-inline: 10px; font-size: 17px; } }
+@media (max-width: 700px) { .actions { gap: 8px; margin-top: 10px; } .actions .button { min-width: 0; flex: 1; gap: 7px; padding: 9px 8px; font-size: 17px; } .actions .button img { width: 21px; height: 21px; } .hero-art { margin: 14px auto 8px; } }
