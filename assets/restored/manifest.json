@@ -1,0 +1,357 @@
+{
+  "phoneCanvas": {
+    "width": 1080,
+    "height": 1920
+  },
+  "note": "PNG 外围透明；应用界面、证书纸张属于内容，保留其底色。原始截图与证明文件未改写。",
+  "assets": [
+    {
+      "file": "accent-brush.svg",
+      "width": 160,
+      "height": 30,
+      "bytes": 204
+    },
+    {
+      "file": "browser-dots.svg",
+      "width": 64,
+      "height": 16,
+      "bytes": 224
+    },
+    {
+      "file": "facenoworry-analysis.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 186848,
+      "transparentPixels": 477666,
+      "opaquePixels": 1495973,
+      "nearOpaquePixels": 1495973,
+      "partialPixels": 99961
+    },
+    {
+      "file": "facenoworry-home.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 290984,
+      "transparentPixels": 477666,
+      "opaquePixels": 1495601,
+      "nearOpaquePixels": 1496160,
+      "partialPixels": 100333
+    },
+    {
+      "file": "facenoworry-polish.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 198959,
+      "transparentPixels": 477666,
+      "opaquePixels": 1494959,
+      "nearOpaquePixels": 1496062,
+      "partialPixels": 100975
+    },
+    {
+      "file": "fazhi-contract-review.png",
+      "width": 1000,
+      "height": 569,
+      "bytes": 83703,
+      "transparentPixels": 34154,
+      "opaquePixels": 534696,
+      "nearOpaquePixels": 534776,
+      "partialPixels": 150
+    },
+    {
+      "file": "icon-github.svg",
+      "width": 16,
+      "height": 16,
+      "bytes": 705
+    },
+    {
+      "file": "icon-projects.svg",
+      "width": 24,
+      "height": 24,
+      "bytes": 242
+    },
+    {
+      "file": "icon-resume-white.svg",
+      "width": 24,
+      "height": 24,
+      "bytes": 216
+    },
+    {
+      "file": "knowmate-growth.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 184035,
+      "transparentPixels": 641960,
+      "opaquePixels": 1335120,
+      "nearOpaquePixels": 1335120,
+      "partialPixels": 96520
+    },
+    {
+      "file": "knowmate-practice.png",
+      "width": 1080,
+      "height": 1920,
+      "bytes": 276497,
+      "transparentPixels": 641960,
+      "opaquePixels": 1335216,
+      "nearOpaquePixels": 1335216,
+      "partialPixels": 96424
+    },
+    {
+      "file": "lingxi-learning.png",
+      "width": 1000,
+      "height": 577,
+      "bytes": 125752,
+      "transparentPixels": 34310,
+      "opaquePixels": 542279,
+      "nearOpaquePixels": 542606,
+      "partialPixels": 411
+    },
+    {
+      "file": "lingxi-overview.png",
+      "width": 1000,
+      "height": 577,
+      "bytes": 89698,
+      "transparentPixels": 34310,
+      "opaquePixels": 542318,
+      "nearOpaquePixels": 542620,
+      "partialPixels": 372
+    },
+    {
+      "file": "mountains-sun.png",
+      "width": 1440,
+      "height": 600,
+      "bytes": 239425,
+      "transparentPixels": 490628,
+      "opaquePixels": 0,
+      "nearOpaquePixels": 58979,
+      "partialPixels": 373372
+    },
+    {
+      "file": "outsourcing-2025.png",
+      "width": 1000,
+      "height": 712,
+      "bytes": 168656,
+      "transparentPixels": 37280,
+      "opaquePixels": 674614,
+      "nearOpaquePixels": 674614,
+      "partialPixels": 106
+    },
+    {
+      "file": "outsourcing-2026-east.png",
+      "width": 1000,
+      "height": 691,
+      "bytes": 92854,
+      "transparentPixels": 36818,
+      "opaquePixels": 654023,
+      "nearOpaquePixels": 654090,
+      "partialPixels": 159
+    },
+    {
+      "file": "outsourcing-2026.png",
+      "width": 1000,
+      "height": 714,
+      "bytes": 89586,
+      "transparentPixels": 37324,
+      "opaquePixels": 676327,
+      "nearOpaquePixels": 676565,
+      "partialPixels": 349
+    },
+    {
+      "file": "outsourcing-school-2025.png",
+      "width": 1000,
+      "height": 755,
+      "bytes": 176680,
+      "transparentPixels": 38246,
+      "opaquePixels": 716665,
+      "nearOpaquePixels": 716665,
+      "partialPixels": 89
+    },
+    {
+      "file": "outsourcing-school-2026.png",
+      "width": 1000,
+      "height": 723,
+      "bytes": 133968,
+      "transparentPixels": 37522,
+      "opaquePixels": 685394,
+      "nearOpaquePixels": 685394,
+      "partialPixels": 84
+    },
+    {
+      "file": "paper.svg",
+      "width": 192,
+      "height": 192,
+      "bytes": 374
+    },
+    {
+      "file": "ridge-ornament.svg",
+      "width": 600,
+      "height": 170,
+      "bytes": 993
+    },
+    {
+      "file": "robot-combat.png",
+      "width": 1000,
+      "height": 715,
+      "bytes": 299361,
+      "transparentPixels": 37366,
+      "opaquePixels": 677571,
+      "nearOpaquePixels": 677571,
+      "partialPixels": 63
+    },
+    {
+      "file": "robot-creative.png",
+      "width": 1000,
+      "height": 2141,
+      "bytes": 299117,
+      "transparentPixels": 68738,
+      "opaquePixels": 2072214,
+      "nearOpaquePixels": 2072214,
+      "partialPixels": 48
+    },
+    {
+      "file": "sun.svg",
+      "width": 128,
+      "height": 128,
+      "bytes": 267
+    },
+    {
+      "file": "vocabulary-2025.png",
+      "width": 1000,
+      "height": 1403,
+      "bytes": 190563,
+      "transparentPixels": 52502,
+      "opaquePixels": 1350450,
+      "nearOpaquePixels": 1350450,
+      "partialPixels": 48
+    },
+    {
+      "file": "zhiling-interview.png",
+      "width": 1000,
+      "height": 573,
+      "bytes": 76537,
+      "transparentPixels": 34222,
+      "opaquePixels": 538515,
+      "nearOpaquePixels": 538678,
+      "partialPixels": 263
+    },
+    {
+      "file": "zhiling-overview.png",
+      "width": 1000,
+      "height": 573,
+      "bytes": 62319,
+      "transparentPixels": 34222,
+      "opaquePixels": 538689,
+      "nearOpaquePixels": 538689,
+      "partialPixels": 89
+    }
+  ],
+  "previews": [
+    {
+      "file": "previews/facenoworry-analysis.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 34224
+    },
+    {
+      "file": "previews/facenoworry-home.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 48798
+    },
+    {
+      "file": "previews/facenoworry-polish.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 36918
+    },
+    {
+      "file": "previews/fazhi-contract-review.png",
+      "width": 640,
+      "height": 364,
+      "bytes": 46221
+    },
+    {
+      "file": "previews/knowmate-growth.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 35226
+    },
+    {
+      "file": "previews/knowmate-practice.png",
+      "width": 360,
+      "height": 640,
+      "bytes": 46342
+    },
+    {
+      "file": "previews/lingxi-learning.png",
+      "width": 640,
+      "height": 369,
+      "bytes": 63539
+    },
+    {
+      "file": "previews/lingxi-overview.png",
+      "width": 640,
+      "height": 369,
+      "bytes": 48315
+    },
+    {
+      "file": "previews/outsourcing-2025.png",
+      "width": 640,
+      "height": 456,
+      "bytes": 87301
+    },
+    {
+      "file": "previews/outsourcing-2026-east.png",
+      "width": 640,
+      "height": 442,
+      "bytes": 46267
+    },
+    {
+      "file": "previews/outsourcing-2026.png",
+      "width": 640,
+      "height": 457,
+      "bytes": 46411
+    },
+    {
+      "file": "previews/outsourcing-school-2025.png",
+      "width": 640,
+      "height": 483,
+      "bytes": 93773
+    },
+    {
+      "file": "previews/outsourcing-school-2026.png",
+      "width": 640,
+      "height": 463,
+      "bytes": 74090
+    },
+    {
+      "file": "previews/robot-combat.png",
+      "width": 640,
+      "height": 458,
+      "bytes": 148250
+    },
+    {
+      "file": "previews/robot-creative.png",
+      "width": 640,
+      "height": 1370,
+      "bytes": 156082
+    },
+    {
+      "file": "previews/vocabulary-2025.png",
+      "width": 640,
+      "height": 898,
+      "bytes": 102973
+    },
+    {
+      "file": "previews/zhiling-interview.png",
+      "width": 640,
+      "height": 367,
+      "bytes": 41747
+    },
+    {
+      "file": "previews/zhiling-overview.png",
+      "width": 640,
+      "height": 367,
+      "bytes": 36007
+    }
+  ]
+}

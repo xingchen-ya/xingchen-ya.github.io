@@ -1,0 +1,159 @@
+/* The approved paper composition, with live text and original project evidence. */
+.portfolio-restored { padding: 0; background: #f8eddd url("assets/restored/paper.svg") repeat; }
+.portfolio-restored .page-shell { max-width: 1920px; border: 0; border-radius: 0; box-shadow: none; overflow: clip; background: transparent; }
+.portfolio-restored .wrap { width: calc(100% - 112px); max-width: 1760px; }
+.portfolio-masthead { position: relative; min-height: 144px; display: grid; place-items: center; padding-block: 12px 18px; isolation: isolate; }
+.masthead-copy { z-index: 1; text-align: center; }
+.portfolio-title { font: 900 clamp(34px, 3.6vw, 68px)/1.15 var(--serif); letter-spacing: .06em; }
+.portfolio-title span { position: relative; white-space: nowrap; }
+.portfolio-title span::after { content: ""; position: absolute; bottom: -5px; left: 8%; width: 84%; height: 13px; background: url("assets/restored/accent-brush.svg") center/100% 100% no-repeat; }
+.portfolio-subtitle { margin-top: 14px; font: 600 17px/1.6 var(--serif); letter-spacing: .2em; }
+.portfolio-subtitle span { margin-inline: 16px; color: var(--quiet); }
+.masthead-ridge { position: absolute; width: 30%; max-width: 500px; height: 134px; object-fit: contain; bottom: 5px; z-index: -1; opacity: .7; }
+.ridge-left { left: -50px; }
+.ridge-right { right: -50px; transform: scaleX(-1); }
+.masthead-sun { position: absolute; top: 13px; right: 8%; width: 70px; height: 70px; z-index: -2; opacity: .8; }
+.portfolio-stage { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.portfolio-browser, .portfolio-honors { min-width: 0; border: 1px solid #cfb99a; border-radius: 16px; background: #fff8ec70; box-shadow: 0 6px 18px #68411d13; }
+.portfolio-browser { overflow: clip; }
+.browser-chrome { height: 32px; display: flex; align-items: center; padding-inline: 18px; background: #ede0cf75; border-bottom: 1px solid #d4c0a6; }
+.browser-chrome img { width: 64px; height: 16px; }
+.portfolio-browser .wrap { width: calc(100% - 64px); }
+.portfolio-browser .site-header { min-height: 69px; gap: 24px; }
+.portfolio-browser .wordmark { font-size: 27px; }
+.portfolio-browser nav { gap: clamp(12px, 1.4vw, 28px); }
+.portfolio-browser nav a { font-size: 17px; }
+.portfolio-browser .hero { grid-template-columns: minmax(0, 1fr) minmax(0, .94fr); gap: 8px; min-height: 280px; padding-block: 16px 12px; }
+.portfolio-browser h1 { font-size: clamp(66px, 4.1vw, 78px); line-height: 1.05; }
+.portfolio-browser .role { margin-top: 9px; font-size: clamp(18px, 1.5vw, 28px); white-space: normal; }
+.portfolio-browser .hero-intro { margin-top: 8px; font-size: 15px; }
+.portfolio-browser .hero-intro::before { width: 40px; height: 2px; margin-bottom: 7px; }
+.portfolio-browser .hero-intro::after { height: 13px; margin-top: 1px; background-image: url("assets/restored/accent-brush.svg"); }
+.portfolio-browser .availability { font: 12px/1.7 var(--serif); margin-top: 4px; }
+.portfolio-browser .actions { margin-top: 10px; gap: 10px; }
+.portfolio-browser .actions .button { min-width: 100px; min-height: 44px; padding: 6px 13px; gap: 8px; font-size: 18px; border-radius: 8px; }
+.portfolio-browser .hero-art img { width: 100%; max-height: 250px; }
+.portfolio-browser .section-line { gap: 20px; padding-block: 10px 8px; }
+.portfolio-browser .section-line h2 { font-size: 30px; }
+.portfolio-browser .project { grid-template-columns: 42px minmax(0, .95fr) minmax(0, 1.4fr); gap: 18px; padding-block: 17px 20px; }
+.portfolio-browser .project-number { font-size: 34px; margin-top: 8px; }
+.portfolio-browser .project-visual { min-height: 210px; padding-inline: 12px; gap: 3px; }
+.portfolio-browser .knowmate-visual a { width: 49%; max-width: 145px; }
+.portfolio-browser .face-visual a { width: 33%; }
+.portfolio-browser .knowmate-visual img, .portfolio-browser .face-visual img { width: 100%; border: 0; border-radius: 0; box-shadow: none; object-fit: contain; }
+.portfolio-browser .project-visual a:hover img { box-shadow: none; }
+.portfolio-browser .project-copy h3 { font-size: clamp(23px, 1.65vw, 31px); margin-bottom: 5px; line-height: 1.35; }
+.portfolio-browser .project-copy small { font-size: .6em; }
+.portfolio-browser .project-copy > p { font-size: 14px; }
+.portfolio-browser .project-copy .project-meta { font: 12px/1.7 var(--serif); margin-bottom: 5px; }
+.portfolio-browser .feature-list { margin-block: 7px 3px; gap: 0 13px; font: 14px/1.8 var(--serif); }
+.project-contribution { color: var(--ink); font: 14px/1.8 var(--serif); }
+.project-contribution strong { margin-right: 8px; }
+.project-contribution::before { content: "· "; color: var(--accent); }
+.portfolio-browser .tags { gap: 5px; margin-block: 7px 2px; }
+.portfolio-browser .tags li { padding: 1px 9px; font-size: 11px; }
+.portfolio-browser summary { min-height: 44px; padding-block: 8px; }
+.portfolio-browser .detail-intro { color: var(--quiet); font: 14px/1.8 var(--sans); margin-bottom: 12px; }
+.portfolio-browser .web-visual { gap: 12px; }
+.portfolio-browser .web-visual img { border: 0; border-radius: 0; }
+.portfolio-browser .project:last-child { border-bottom: 0; }
+.portfolio-honors { padding: 24px; }
+.portfolio-honors .wrap { width: 100%; }
+.portfolio-honors .section-line { padding-block: 0 14px; }
+.portfolio-honors .section-line h2 { font-size: 34px; }
+.portfolio-honors .section-line > span { display: none; }
+.portfolio-honors .awards-intro { font-size: 15px; }
+.portfolio-honors .awards-overview { margin-block: 12px 18px; font-size: 14px; }
+.portfolio-honors .awards-overview span { font-size: 11px; }
+.portfolio-honors .award-grid { gap: 23px 22px; padding-block: 0; }
+.portfolio-honors .award-record { padding-bottom: 15px; }
+.portfolio-honors .award-grid img { width: 100%; height: 174px; object-fit: contain; border: 0; border-radius: 0; background: transparent; }
+.portfolio-honors .award-date { margin-top: 9px; font: 700 12px/1.8 var(--serif); }
+.portfolio-honors .award-grid h3 { font-size: 17px; line-height: 1.55; margin-block: 5px; }
+.portfolio-honors .award-subtitle { font: 12px/1.7 var(--serif); }
+.portfolio-honors .award-practice { font: 12px/1.8 var(--sans); margin-top: 9px; }
+.portfolio-honors .award-record details p { font-size: 12px; }
+.portfolio-honors summary { font-size: 13px; }
+.portfolio-honors .award-links { gap: 0 12px; }
+.portfolio-profile { margin-top: 38px; }
+.portfolio-profile > section { padding-top: 20px; }
+.portfolio-restored .footer { margin-top: 20px; }
+.portfolio-address { letter-spacing: .05em; font-size: 15px; }
+@media (min-width: 1500px) {
+  .portfolio-browser .project { min-height: 225px; }
+  .portfolio-browser .project-visual { min-height: 190px; }
+  .portfolio-browser .knowmate-visual a { max-width: 154px; }
+  .portfolio-browser .project-visual img { max-height: 210px; }
+}
+@media (max-width: 1250px) {
+  .portfolio-restored .wrap { width: calc(100% - 64px); }
+  .portfolio-stage { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .portfolio-browser .wrap { width: calc(100% - 64px); }
+  .portfolio-honors .wrap { width: 100%; }
+  .portfolio-masthead { min-height: 150px; }
+  .portfolio-browser .hero { min-height: 330px; }
+  .portfolio-browser .role { font-size: 27px; }
+  .portfolio-browser .project-copy h3 { font-size: 30px; }
+  .portfolio-browser .project-visual { min-height: 240px; }
+  .portfolio-honors .award-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portfolio-honors .award-grid img { height: 240px; }
+  .portfolio-honors .award-grid h3 { font-size: 20px; }
+}
+@media (max-width: 700px) {
+  .portfolio-restored .wrap { width: calc(100% - 28px); }
+  .portfolio-masthead { min-height: 138px; padding-block: 22px; }
+  .portfolio-title { font-size: clamp(26px, 7.3vw, 42px); letter-spacing: .02em; }
+  .portfolio-title span::after { height: 9px; bottom: -8px; }
+  .portfolio-subtitle { font-size: 11px; letter-spacing: .08em; margin-top: 19px; }
+  .portfolio-subtitle span { margin-inline: 6px; }
+  .masthead-ridge { width: 44%; height: 64px; opacity: .4; bottom: 0; }
+  .ridge-left { left: -20px; }
+  .ridge-right { right: -20px; }
+  .masthead-sun { width: 35px; height: 35px; top: 6px; right: 2%; opacity: .55; }
+  .portfolio-stage { gap: 24px; }
+  .portfolio-browser, .portfolio-honors { border-radius: 12px; }
+  .browser-chrome { height: 28px; padding-inline: 12px; }
+  .browser-chrome img { width: 54px; }
+  .portfolio-browser .wrap { width: calc(100% - 30px); }
+  .portfolio-browser .site-header { min-height: 66px; gap: 10px; }
+  .portfolio-browser .wordmark { font-size: 22px; }
+  .portfolio-browser nav { gap: 0 9px; }
+  .portfolio-browser nav a { font-size: 13px; }
+  .portfolio-browser .hero { display: grid; grid-template-columns: 1fr; padding-block: 25px 8px; gap: 8px; min-height: 0; }
+  .portfolio-browser h1 { font-size: 62px; }
+  .portfolio-browser .role { font-size: clamp(17px, 4.8vw, 24px); }
+  .portfolio-browser .hero-intro { font-size: 14px; }
+  .portfolio-browser .hero-art { width: 100%; max-width: 360px; margin: 0 auto; }
+  .portfolio-browser .hero-art img { max-height: 154px; }
+  .portfolio-browser .actions { gap: 7px; margin-top: 13px; }
+  .portfolio-browser .actions .button { min-width: 0; min-height: 44px; padding-inline: 7px; gap: 6px; font-size: 16px; }
+  .portfolio-browser .actions .button img { width: 19px; height: 19px; }
+  .portfolio-browser .section-line { padding-block: 12px; }
+  .portfolio-browser .section-line h2 { font-size: 26px; }
+  .portfolio-browser .project { grid-template-columns: 24px minmax(0, 1fr); gap: 8px; padding-block: 18px; }
+  .portfolio-browser .project-number { font-size: 23px; margin-top: 3px; }
+  .portfolio-browser .project-copy h3 { font-size: 23px; grid-row: 1; }
+  .portfolio-browser .project-copy .project-meta { font-size: 11px; grid-row: 2; }
+  .portfolio-browser .project-copy > p:not(.project-meta) { font-size: 13px; grid-row: 3; }
+  .portfolio-browser .feature-list { font-size: 12px; grid-row: 4; margin-block: 2px 0; }
+  .portfolio-browser .project-copy > p.project-contribution { grid-column: 2; grid-row: 5; font-size: 12px; }
+  .portfolio-browser .project-copy .tags { grid-column: 2; grid-row: 6; margin-block: 3px; }
+  .portfolio-browser .project-visual { grid-column: 2; grid-row: 7; min-height: 0; padding: 8px 0 2px; border: 0; }
+  .portfolio-browser .knowmate-visual a { max-width: 150px; width: 48%; }
+  .portfolio-browser .face-visual a { width: 33%; }
+  .portfolio-browser .project-copy > details { grid-column: 2; grid-row: 8; }
+  .portfolio-browser .project-links { grid-column: 2; grid-row: 9; }
+  .portfolio-browser .web-visual { gap: 8px; }
+  .portfolio-browser .workflow-label { font-size: 17px; }
+  .portfolio-browser .workflow-steps li { font-size: 16px; }
+  .portfolio-honors { padding: 20px 16px; }
+  .portfolio-honors .wrap { width: 100%; }
+  .portfolio-honors .section-line h2 { font-size: 28px; }
+  .portfolio-honors .award-grid { grid-template-columns: 1fr; gap: 26px; }
+  .portfolio-honors .award-grid img { height: auto; max-height: 250px; }
+  .portfolio-honors .award-grid h3 { font-size: 20px; }
+  .portfolio-honors .award-practice { font-size: 13px; }
+  .portfolio-profile { margin-top: 22px; }
+  .portfolio-restored .footer { flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding-block: 14px; }
+  .portfolio-address { order: 3; width: 100%; font-size: 13px; }
+}

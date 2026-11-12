@@ -83,9 +83,13 @@ let navigationFrame = 0;
 function updateNavigation() {
   navigationFrame = 0;
   let activeLink;
+  let activeTop = -Infinity;
+  const activationTop = Math.min(96, window.innerHeight * 0.38);
   for (const link of sectionLinks) {
-    if (document.querySelector(link.hash).getBoundingClientRect().top <= window.innerHeight * 0.38) {
+    const top = document.querySelector(link.hash).getBoundingClientRect().top;
+    if (top <= activationTop && top > activeTop) {
       activeLink = link;
+      activeTop = top;
     }
   }
   // Short closing sections cannot always reach the usual activation line.
