@@ -12,7 +12,7 @@
   <meta property="og:description" content="AI 学习、求职辅助、法律服务与医学影像项目实践。查看罗洋的作品、技术能力与简历。">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=projects-20261112">
+  <link rel="stylesheet" href="style.css?v=media-20261112">
   <script src="script.js?v=3" defer></script>
 </head>
 <body>
@@ -23,6 +23,7 @@
     <nav aria-label="主导航">
       <a href="#projects">项目</a>
       <a href="#skills">技能</a>
+      <a href="#awards">获奖</a>
       <a href="#about">关于</a>
       <a href="#contact">联系</a>
       <a href="assets/luo-yang-resume.pdf?v=resume-20261111" download="罗洋-AI全栈工程师-实习简历.pdf">简历</a>
@@ -57,6 +58,7 @@
           <h3>KnowMate <small><span>/</span> AI 学习应用</small></h3>
           <p class="project-meta">2026.08 – 2026.10 · 团队项目 · 项目经理 / 移动端开发</p>
           <p>面向 AI 学习场景，通过分类练习、上手引导和成长报告，帮助学习者规划下一步。</p>
+          <ul class="feature-list" aria-label="重点功能"><li>新手引导与学习画像</li><li>分类练习与成长报告</li></ul>
           <ul class="tags" aria-label="项目技术栈"><li>React Native</li><li>Expo</li><li>FastAPI</li></ul>
           <details>
             <summary>查看详情 <span aria-hidden="true">→</span></summary>
@@ -81,6 +83,7 @@
           <h3>FaceNoWorry <small><span>/</span> AI 求职应用</small></h3>
           <p class="project-meta">2026.03 – 2026.09 · 团队项目 · 项目经理 / 应用开发</p>
           <p>面向求职准备的移动应用，包含简历分析与润色、练习和社区。点击页面图片可查看大图。</p>
+          <ul class="feature-list" aria-label="重点功能"><li>简历分析与润色</li><li>社区与求职练习</li></ul>
           <ul class="tags" aria-label="项目技术栈"><li>React Native</li><li>Expo Router</li><li>TypeScript</li></ul>
           <details>
             <summary>查看详情 <span aria-hidden="true">→</span></summary>
@@ -104,6 +107,7 @@
           <h3>法智引擎 <small><span>/</span> AI 法律服务平台</small></h3>
           <p class="project-meta">团队项目 · 法律咨询与文档处理</p>
           <p>面向个人、小微企业与基层法律服务场景，整合法律咨询、文书生成、合同审查、类案检索和合规自查。</p>
+          <ul class="feature-list" aria-label="重点功能"><li>法律咨询与文书生成</li><li>合同审查与类案检索</li></ul>
           <ul class="tags" aria-label="项目技术方向"><li>Vue 3 / TypeScript</li><li>大模型服务</li><li>文档处理</li></ul>
           <details>
             <summary>查看详情 <span aria-hidden="true">→</span></summary>
@@ -114,6 +118,7 @@
               <dt>展示范围</dt><dd>内容依据设计文档与演示视频整理，展示录制时的功能流程；AI 输出用于辅助参考，不替代专业律师意见。</dd>
             </dl>
           </details>
+          <div class="project-links"><a href="videos.html#fazhi">观看演示片段 ↗</a></div>
         </div>
       </article>
       <article class="project" id="breast-imaging">
@@ -127,6 +132,7 @@
           <h3>乳腺癌影像分析系统 <small><span>/</span> 医学影像应用</small></h3>
           <p class="project-meta">国家级创新创业项目 · 团队项目</p>
           <p>围绕医学影像管理与医患协作，组织多模态影像上传、DICOM 浏览、样本导入和报告管理，连接患者诊断申请与医生诊断流程。</p>
+          <ul class="feature-list" aria-label="重点功能"><li>DICOM 与多模态影像</li><li>报告管理与医患协作</li></ul>
           <ul class="tags" aria-label="项目技术栈"><li>Vue 3</li><li>Spring Boot</li><li>DICOM / MySQL</li></ul>
           <details>
             <summary>查看详情 <span aria-hidden="true">→</span></summary>
@@ -140,10 +146,62 @@
           </details>
         </div>
       </article>
+
+      <article class="project" id="lingxi">
+        <span class="project-number" aria-hidden="true">05</span>
+        <figure class="project-visual web-visual">
+          <a href="assets/lingxi-overview.webp" aria-label="查看灵犀学伴引导演示大图"><img src="assets/lingxi-overview.webp" alt="灵犀学伴视频展示个性化分析与陪伴学习的移动端引导画面" width="960" height="544" loading="lazy"></a>
+          <a href="assets/lingxi-learning.webp" aria-label="查看灵犀学伴测试报告演示大图"><img src="assets/lingxi-learning.webp" alt="灵犀学伴模拟测试完成页与结果分析功能介绍" width="960" height="544" loading="lazy"></a>
+          <figcaption>移动端体验 · 原视频演示画面</figcaption>
+        </figure>
+        <div class="project-copy">
+          <h3>灵犀学伴 <small><span>/</span> AI 学习伙伴</small></h3>
+          <p class="project-meta">团队作品 · 2025 年浙江省服务外包创新应用大赛一等奖</p>
+          <p>通过画像问卷、新手任务、学习日历和课程练习，串联从学习规划到进度反馈的移动端体验，提供陪伴与学习激励。</p>
+          <ul class="feature-list" aria-label="重点功能"><li>画像与新手引导</li><li>学习任务与打卡</li><li>练习报告与职业探索</li></ul>
+          <ul class="tags" aria-label="项目技术与交互方向"><li>移动端交互</li><li>AI 学习流程</li><li>学习数据展示</li></ul>
+          <details><summary>查看详情 <span aria-hidden="true">→</span></summary><dl>
+            <dt>规划与激励</dt><dd>视频展示多步画像问卷、新手任务、任务反馈、积分奖励、学习日历与每日寄语，帮助用户建立学习节奏。</dd>
+            <dt>学习与反馈</dt><dd>包含课程视频与评论、同步教材推荐、模拟测试、答题解析、算法配对练习，以及职业信息展示。</dd>
+            <dt>配套 Web 项目</dt><dd>学习伙伴配套 Web 材料采用 React、TypeScript 和 Spring Boot，包含 AI、聊天与搜索模块，可通过项目仓库入口查看。</dd>
+            <dt>展示与获奖</dt><dd>视频为录制时的演示，分数与任务数据不代表真实学习成效。省赛一等奖证书的团队为“流星堂”，列有罗洋，证书日期为 2025 年 11 月 23 日。</dd>
+          </dl></details>
+          <div class="project-links"><a href="videos.html#lingxi">观看演示片段 ↗</a><a href="#award-2025">查看获奖证明 ↗</a><a href="https://gitee.com/liu-yipeng2222/study-partner-ai">项目仓库 ↗</a></div>
+        </div>
+      </article>
+      <article class="project" id="zhiling">
+        <span class="project-number" aria-hidden="true">06</span>
+        <figure class="project-visual web-visual">
+          <a href="assets/zhiling-overview.webp" aria-label="查看智翎 AI 学习中心演示大图"><img src="assets/zhiling-overview.webp" alt="智翎智能学习平台的 AI 学习中心，包含学习分析、知识卡片、答疑和学习规划入口" width="1280" height="720" loading="lazy"></a>
+          <a href="assets/zhiling-interview.webp" aria-label="查看智翎面试反馈演示大图"><img src="assets/zhiling-interview.webp" alt="智翎平台模拟面试反馈页面，展示回答评价、优势和改进建议" width="1280" height="720" loading="lazy"></a>
+          <figcaption>AI 学习中心与面试反馈 · 原型演示画面</figcaption>
+        </figure>
+        <div class="project-copy">
+          <h3>智翎智能学习平台 <small><span>/</span> 学习与就业辅助</small></h3>
+          <p class="project-meta">团队项目 · A02 AI 智能·学习搭子赛题材料</p>
+          <p>将学习画像、AI 规划、知识答疑与职业准备组织到同一 Web 平台，配套教学管理入口，衔接日常学习和求职练习。</p>
+          <ul class="feature-list" aria-label="重点功能"><li>AI 规划与知识卡片</li><li>简历工坊与模拟面试</li><li>教学管理与计划跟踪</li></ul>
+          <ul class="tags" aria-label="项目技术栈"><li>React / TypeScript</li><li>Spring Boot</li><li>MySQL / Redis</li></ul>
+          <details><summary>查看详情 <span aria-hidden="true">→</span></summary><dl>
+            <dt>学习流程</dt><dd>材料覆盖画像生成、目标与每日任务、课程学习、题库和错题、知识卡片、智能答疑、自习室及学习社区。</dd>
+            <dt>职业与教学</dt><dd>演示包含简历信息填写、模拟面试反馈，以及管理端工作台、课堂列表、讨论区和教学计划安排。</dd>
+            <dt>技术栈</dt><dd>前端依赖清单包含 React 18、TypeScript、Vite、Ant Design、Zustand 和 Axios；后端多模块项目使用 Java、Spring Boot、MyBatis、MySQL、Redis，另有 AI、聊天与搜索模块。</dd>
+            <dt>方案边界</dt><dd>RAG、多智能体、知识图谱和情感分析等按解决方案描述，不将文档中的完成度、性能目标或模拟面试示例回答作为个人真实成果。</dd>
+          </dl></details>
+          <div class="project-links"><a href="videos.html#zhiling">观看演示片段 ↗</a><a href="https://gitee.com/liu-yipeng2222/study-partner-ai">项目仓库 ↗</a></div>
+        </div>
+      </article>
       <aside class="related" aria-label="其他团队仓库">
         <h3>团队仓库</h3>
         <a href="https://gitee.com/liu-yipeng2222/study-partner-ai-admin-frontend-app">Study Partner AI 管理端 <span aria-hidden="true">↗</span></a>
       </aside>
+    </section>
+    <section class="wrap awards" id="awards" aria-labelledby="awards-title">
+      <div class="section-line"><h2 id="awards-title">获奖记录</h2><span aria-hidden="true">AWARDS</span></div>
+      <div class="award-grid">
+        <article id="award-2025"><a href="assets/awards/outsourcing-2025-first.jpg" target="_blank" rel="noopener"><img src="assets/awards/outsourcing-2025-thumb.webp" alt="2025 年浙江省第十二届大学生服务外包创新应用大赛一等奖证书，流星堂团队成员含罗洋" width="800" height="564" loading="lazy"></a><p class="award-date">2025.11 · 灵犀学伴</p><h3>浙江省第十二届大学生服务外包<br>创新应用大赛 一等奖</h3><p>流星堂团队 · 证书编号 ZJJS2025FWWB5CBY</p><a class="project-source" href="assets/awards/outsourcing-2025-first.jpg" target="_blank" rel="noopener">查看获奖证书 ↗</a></article>
+        <article id="award-2026"><a href="assets/awards/outsourcing-2026-third.pdf" target="_blank" rel="noopener"><img src="assets/awards/outsourcing-2026-thumb.webp" alt="第十七届中国大学生服务外包创新创业大赛全国赛人工智能专项赛道三等奖证书，参赛学生含罗洋" width="900" height="637" loading="lazy"></a><p class="award-date">2026.07 · 全国赛</p><h3>第十七届中国大学生服务外包创新创业大赛<br>人工智能专项赛道 三等奖</h3><p>参赛学生含罗洋 · 证书编号 FT2615581D3283</p><a class="project-source" href="assets/awards/outsourcing-2026-third.pdf" target="_blank" rel="noopener">查看获奖证书 PDF ↗</a> <a class="project-source" href="https://icert.xidian.edu.cn/validate" target="_blank" rel="noopener">证书验证入口 ↗</a></article>
+      </div>
     </section>
     <section class="wrap skills" id="skills" aria-labelledby="skills-title">
       <div class="section-line"><h2 id="skills-title">技术能力</h2><span aria-hidden="true">SKILLS</span></div>
@@ -157,7 +215,7 @@
     </section>
     <section class="wrap education" id="education" aria-labelledby="education-title">
       <div class="section-line"><h2 id="education-title">教育背景</h2><span aria-hidden="true">EDUCATION</span></div>
-      <div class="education-content"><div><h3>物联网工程 <span>本科 · 在读</span></h3><p>2024.09 – 2028.06（预计毕业）</p></div><dl class="school-field"><dt>学校</dt><dd>—</dd></dl></div>
+      <div class="education-content"><div><h3>物联网工程 <span>本科 · 在读</span></h3><p>2024.09 – 2028.06（预计毕业）</p></div><dl class="school-field"><dt>学校</dt><dd>浙江树人学院</dd></dl></div>
     </section>
     <section class="wrap about" id="about" aria-labelledby="about-title">
       <div class="section-line"><h2 id="about-title">关于我</h2><span>ABOUT</span></div>

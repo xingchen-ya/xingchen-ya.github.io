@@ -39,6 +39,10 @@
 
 山水与笔记本使用内置 imagegen 辅助提取，可能存在细节重绘；笔记本仅为示意素材。主页面接入透明山水与 SVG 按钮，项目区继续使用项目截图。通用图标与笔画为 SVG 重建，GitHub 图标来自 Bootstrap Icons，MIT 许可见 assets/extracted/LICENSE-icons.txt。
 
+## 项目媒体与证明
+
+首页各项目列出重点功能与技术标签；`videos.html` 提供灵犀学伴、智翎智能学习平台和法智引擎的视频节选。媒体位于 `assets/media/`，默认点击后加载；获奖证书及预览图位于 `assets/awards/`，获奖区链接至完整图片或原 PDF。2026 年全国赛证书暂不关联具体项目。
+
 ## 更新简历
 
 `scripts/build_resume.py` 使用 ReportLab 生成一页简历，默认中文字体为 Windows 宋体，可通过 `--font` 指定其他中文 TTF 字体。安装 `reportlab` 后在项目目录运行 `python scripts/build_resume.py`。生成后检查页数、文字提取和页面渲染，再发布更新。内容来源与待补项见 `docs/resume-content-evidence.md`。
