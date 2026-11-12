@@ -283,3 +283,19 @@ body.viewer-open { overflow: hidden; }
  .award-grid h3 { font-size: 18px; }
  .video-entry h2 { font-size: 23px; }
 }
+
+/* Award details preserve the certificate's competition and level. */
+.awards-intro { color: var(--quiet); max-width: 62ch; }
+.awards-overview { margin-block: 12px 22px; color: var(--accent); font: 700 16px/1.8 var(--sans); }
+.awards-overview span { display: block; font: 12px/1.8 var(--sans); color: var(--quiet); }
+.award-grid { gap: 30px 36px; }
+.award-record { border-bottom: 1px solid var(--rule); padding-bottom: 20px; }
+.award-image { display: block; }
+.award-grid h3 { margin-block: 7px; font-size: 21px; }
+.award-grid .award-subtitle { color: var(--ink); font-weight: 600; }
+.award-grid .award-practice { color: var(--quiet); font: 14px/1.9 var(--sans); margin-top: 12px; }
+.award-practice strong { display: block; color: var(--ink); font-size: 12px; margin-bottom: 4px; }
+.award-record details p { font: 13px/1.9 var(--sans); margin-bottom: 7px; }
+.award-links { display: flex; flex-wrap: wrap; gap: 0 18px; }
+.award-links a { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-size: 13px; }
+@media(max-width:700px){.award-grid h3{font-size:19px}.award-grid .award-practice{font-size:13px}.award-grid img{height:220px}.awards-overview{font-size:14px}}
