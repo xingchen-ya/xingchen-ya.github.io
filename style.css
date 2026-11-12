@@ -211,6 +211,15 @@ body.viewer-open { overflow: hidden; }
 .availability { color: var(--quiet); font: 14px/1.8 var(--sans); margin-top: 8px; }
 .project-copy .project-meta { color: var(--quiet); font: 12px/1.8 var(--sans); margin-bottom: 10px; }
 .project-source { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent); font-size: 14px; }
+.web-visual { margin: 0; flex-direction: column; }
+.web-visual a { display: block; width: 100%; }
+.web-visual img { width: 100%; border: 1px solid var(--rule); border-radius: 7px; }
+.web-visual figcaption, .workflow-caption { color: var(--quiet); font: 12px/1.7 var(--sans); }
+.workflow-visual { flex-direction: column; align-items: stretch; }
+.workflow-label { color: var(--accent); font: 700 19px/1.5 var(--serif); }
+.workflow-steps { margin: 0; padding: 0; list-style: none; }
+.workflow-steps li { padding: 13px 0; border-bottom: 1px solid var(--rule); font: 700 18px/1.6 var(--serif); }
+.workflow-steps span { display: block; color: var(--quiet); font: 11px/1.7 var(--sans); }
 .skills, .education, .contact { padding-top: 16px; }
 .skill-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
 .skill-grid article { padding: 20px 0; border-bottom: 1px solid var(--rule); }

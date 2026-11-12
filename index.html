@@ -9,10 +9,10 @@
   <meta name="site-kind" content="other">
   <meta name="theme-color" content="#f6eddb">
   <meta property="og:title" content="罗洋｜AI 全栈开发作品集">
-  <meta property="og:description" content="KnowMate、FaceNoWorry 的项目实践、个人贡献与简历。">
+  <meta property="og:description" content="AI 学习、求职辅助、法律服务与医学影像项目实践。查看罗洋的作品、技术能力与简历。">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=resume-20261111">
+  <link rel="stylesheet" href="style.css?v=projects-20261112">
   <script src="script.js?v=3" defer></script>
 </head>
 <body>
@@ -94,9 +94,54 @@
           </details>
         </div>
       </article>
-      <aside class="related" aria-label="团队仓库">
+      <article class="project" id="fazhi">
+        <span class="project-number" aria-hidden="true">03</span>
+        <figure class="project-visual web-visual">
+          <a href="assets/fazhi-contract-review.webp" aria-label="查看法智引擎合同审查演示大图"><img src="assets/fazhi-contract-review.webp" alt="法智引擎演示视频中的合同审查结果，显示风险说明、法律依据及修改建议" width="1140" height="636" loading="lazy"></a>
+          <figcaption>合同审查 · 视频演示画面</figcaption>
+        </figure>
+        <div class="project-copy">
+          <h3>法智引擎 <small><span>/</span> AI 法律服务平台</small></h3>
+          <p class="project-meta">团队项目 · 法律咨询与文档处理</p>
+          <p>面向个人、小微企业与基层法律服务场景，整合法律咨询、文书生成、合同审查、类案检索和合规自查。</p>
+          <ul class="tags" aria-label="项目技术方向"><li>Vue 3 / TypeScript</li><li>大模型服务</li><li>文档处理</li></ul>
+          <details>
+            <summary>查看详情 <span aria-hidden="true">→</span></summary>
+            <dl>
+              <dt>咨询与文书</dt><dd>演示覆盖咨询分类、多轮问答、历史会话与语音输入，以及模板选择、分步填表、文书预览、编辑、保存和导出操作。</dd>
+              <dt>审查与检索</dt><dd>展示合同上传、风险分级、法律依据、修改建议和修正标记；支持类案搜索、案例详情、历史检索与收藏，以及场景化合规问卷。</dd>
+              <dt>技术方案</dt><dd>设计文档采用 Vue 3、TypeScript、Vite、Arco Design 与 Node.js，涉及大模型服务、OCR、知识库与检索增强方案。底层部署与性能指标尚未复验。</dd>
+              <dt>展示范围</dt><dd>内容依据设计文档与演示视频整理，展示录制时的功能流程；AI 输出用于辅助参考，不替代专业律师意见。</dd>
+            </dl>
+          </details>
+        </div>
+      </article>
+      <article class="project" id="breast-imaging">
+        <span class="project-number" aria-hidden="true">04</span>
+        <div class="project-visual workflow-visual" aria-label="文档描述的影像与诊断协作流程示意">
+          <p class="workflow-label">医学影像与医患协作</p>
+          <ol class="workflow-steps"><li><span>01 / 患者端</span>影像上传与批次管理</li><li><span>02 / 影像工作台</span>DICOM 浏览与报告管理</li><li><span>03 / 医生端</span>诊断申请与正式诊断</li></ol>
+          <p class="workflow-caption">业务流程示意 · 依据项目交接文档</p>
+        </div>
+        <div class="project-copy">
+          <h3>乳腺癌影像分析系统 <small><span>/</span> 医学影像应用</small></h3>
+          <p class="project-meta">国家级创新创业项目 · 团队项目</p>
+          <p>围绕医学影像管理与医患协作，组织多模态影像上传、DICOM 浏览、样本导入和报告管理，连接患者诊断申请与医生诊断流程。</p>
+          <ul class="tags" aria-label="项目技术栈"><li>Vue 3</li><li>Spring Boot</li><li>DICOM / MySQL</li></ul>
+          <details>
+            <summary>查看详情 <span aria-hidden="true">→</span></summary>
+            <dl>
+              <dt>影像与样本</dt><dd>项目文档描述 DICOM 与常见图片上传、文件夹批量导入、MRI / 超声 / 钼靶影像组织，以及 BrEaST、MIAS、CBIS-DDSM 公开数据集的导入与样本索引。</dd>
+              <dt>角色与流程</dt><dd>管理员、医生、患者三类角色；患者上传影像、查看批次报告并申请医生诊断，医生填写正式诊断，推进报告状态流转。</dd>
+              <dt>工程结构</dt><dd>前端使用 Vue 3、TypeScript、Vite、Pinia、Element Plus 与 Cornerstone；后端采用 Spring Boot、MyBatis、MySQL 和 JWT，文档提供 Docker Compose 部署流程。</dd>
+              <dt>实现边界</dt><dd>交接文档说明诊断与训练接口当前使用模拟数据，SAM2 分割仍需补接 Python / Py4J 服务；不将其表述为已完成的真实诊断、训练或临床验证成果。</dd>
+            </dl>
+            <a class="project-source" href="https://gitee.com/yuanxyz/rxa">查看团队仓库 ↗</a>
+          </details>
+        </div>
+      </article>
+      <aside class="related" aria-label="其他团队仓库">
         <h3>团队仓库</h3>
-        <a href="https://gitee.com/yuanxyz/rxa">乳腺癌影像分析系统 <span aria-hidden="true">↗</span></a>
         <a href="https://gitee.com/liu-yipeng2222/study-partner-ai-admin-frontend-app">Study Partner AI 管理端 <span aria-hidden="true">↗</span></a>
       </aside>
     </section>
@@ -119,7 +164,7 @@
       <div class="about-grid">
         <p class="about-lead">我叫罗洋。<br>希望从 AI 应用开发实习开始，把项目经验用在真实产品中。</p>
         <div>
-          <p>在 KnowMate 和 FaceNoWorry 中，我负责分派任务、验收成果，同时参与页面开发与项目整合。答辩前，我也负责准备材料，梳理如何演示项目及说明技术取舍。</p>
+          <p>我的项目实践涉及 AI 学习、求职辅助、法律服务与医学影像等场景。在 KnowMate 和 FaceNoWorry 中，我负责分派任务、验收成果，同时参与页面开发与项目整合，并整理演示流程与答辩材料。</p>
           <div class="profile-links">
             <a href="https://github.com/xingchen-ya">GitHub ↗</a>
             <a href="https://gitee.com/yang-luo27">Gitee ↗</a>
