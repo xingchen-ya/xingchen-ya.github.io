@@ -87,7 +87,8 @@ function updateNavigation() {
   const activationTop = Math.min(96, window.innerHeight * 0.38);
   for (const link of sectionLinks) {
     const top = document.querySelector(link.hash).getBoundingClientRect().top;
-    if (top <= activationTop && top > activeTop) {
+    const isHashTie = Math.abs(top - activeTop) < 1 && link.hash === window.location.hash;
+    if (top <= activationTop && (top > activeTop || isHashTie)) {
       activeLink = link;
       activeTop = top;
     }
@@ -107,4 +108,5 @@ function scheduleNavigation() {
 }
 window.addEventListener("scroll", scheduleNavigation, { passive: true });
 window.addEventListener("resize", scheduleNavigation);
+window.addEventListener("hashchange", scheduleNavigation);
 updateNavigation();
