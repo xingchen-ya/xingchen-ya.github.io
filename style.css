@@ -72,7 +72,7 @@ summary::-webkit-details-marker { display: none; }
 summary span { display: inline-block; margin-left: 8px; transition: transform .16s ease; }
 summary:hover { text-decoration: underline; }
 summary:hover span { transform: translateX(3px); }
-details[open] summary span { transform: rotate(90deg); }
+details[open] > summary span { transform: rotate(90deg); }
 dl { font: 14px/1.8 var(--sans); margin: 0; }
 dt { font-weight: 700; }
 dd { margin: 0 0 8px; }

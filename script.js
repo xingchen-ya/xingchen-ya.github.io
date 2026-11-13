@@ -112,5 +112,29 @@ function scheduleNavigation() {
 }
 window.addEventListener("scroll", scheduleNavigation, { passive: true });
 window.addEventListener("resize", scheduleNavigation);
-window.addEventListener("hashchange", scheduleNavigation);
+
+function revealHashTarget() {
+  let id;
+  try { id = decodeURIComponent(window.location.hash.slice(1)); }
+  catch { return; }
+  const target = document.getElementById(id);
+  if (!target) return;
+  let revealed = false;
+  for (let details = target.closest("details"); details; details = details.parentElement?.closest("details")) {
+    if (!details.open) { details.open = true; revealed = true; }
+  }
+  if (revealed) requestAnimationFrame(() => {
+    target.scrollIntoView({ block: "start" });
+    scheduleNavigation();
+  });
+}
+
+window.addEventListener("hashchange", () => {
+  revealHashTarget();
+  scheduleNavigation();
+});
+for (const collection of document.querySelectorAll(".collection-more")) {
+  collection.addEventListener("toggle", scheduleNavigation);
+}
+revealHashTarget();
 updateNavigation();
