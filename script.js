@@ -96,7 +96,11 @@ function updateNavigation() {
   // Short closing sections cannot always reach the usual activation line.
   if (window.scrollY > 0 &&
       window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
-    activeLink = sectionLinks.at(-1);
+    const hashLink = sectionLinks.find(link => link.hash === window.location.hash);
+    const hashBounds = hashLink && document.querySelector(hashLink.hash).getBoundingClientRect();
+    activeLink = hashBounds && hashBounds.top >= 0 && hashBounds.bottom <= window.innerHeight
+      ? hashLink
+      : sectionLinks.at(-1);
   }
   for (const link of sectionLinks) {
     if (link === activeLink) link.setAttribute("aria-current", "location");
