@@ -1,15 +1,15 @@
-"""Build a searchable, linked two-page A4 resume with ReportLab."""
+"""Build a searchable three-page A4 resume and reference-matched project pages."""
 import argparse
 from pathlib import Path
 from xml.sax.saxutils import escape
 from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph
+from resume_project_pages import draw_project_pages
 
 ROOT = Path(__file__).resolve().parents[1]
 BLUE, INK, QUIET, RULE = [colors.HexColor(c) for c in
@@ -86,13 +86,13 @@ class Resume:
         self.links(links)
 
     def footer(self, page):
-        if self.y > self.h - 45:
+        if self.y > self.h - 41:
             raise ValueError("Content overlaps footer")
         self.pdf.setStrokeColor(RULE)
         self.pdf.setLineWidth(.6)
         self.pdf.line(self.margin, 33, self.w - self.margin, 33)
         self.line("罗洋 · AI 全栈工程师实习", self.h - 27, 8, color=QUIET)
-        self.line(f"{page} / 2", self.h - 27, 8, x=self.w - self.margin, color=QUIET, right=True)
+        self.line(f"{page} / 3", self.h - 27, 8, x=self.w - self.margin, color=QUIET, right=True)
 
 
 def build(font_path, output, bold_path=None):
@@ -134,8 +134,18 @@ def build(font_path, output, bold_path=None):
               "面向计算机专业学生的模拟面试与能力提升平台，覆盖后端、前端和运维岗位，兼顾求职辅助。",
               ["<b>应用开发：</b>参与简历管理、分析与润色页面及接口接入，组织生成请求、查询和结果展示。",
                "<b>接口与状态：</b>参与登录注册和社区功能，处理鉴权、异步请求、超时反馈与失败重试。",
-               "<b>项目推进：</b>负责任务分配、成果验收、应用整合与答辩准备；面试技术机制见第 2 页。"],
+               "<b>项目推进：</b>负责任务分配、成果验收、应用整合与答辩准备；面试技术机制见第 3 页。"],
               [("项目代码", JOBFACE), ("官方赛题", CONTEST)])
+    r.y += 4
+    r.para("<b>其他项目实践</b>", gap=3)
+    for title, description, anchor in [
+        ("法智引擎", "AI 法律服务，法律咨询与合同文档处理。", "fazhi"),
+        ("乳腺癌影像分析", "国家级创新创业项目，影像分析与分割流程。", "breast-imaging"),
+        ("灵犀学伴", "移动学习体验与学习交互。", "lingxi"),
+        ("智翎智能学习平台", "Web 学习中心与教学管理。", "zhiling"),
+    ]:
+        r.para(f'<link href="{SITE}#{anchor}" color="#3155D8"><b>{title}</b></link>：{description}',
+               "meta", gap=2)
     r.section("代表荣誉")
     for text in [
         "2026.07　中国大学生服务外包创新创业大赛 · 全国赛三等奖（人工智能专项赛道）",
@@ -145,42 +155,7 @@ def build(font_path, output, bold_path=None):
     ]:
         r.para(escape(text), "meta", gap=2)
     r.footer(1)
-    r.pdf.showPage()
-    r.y = 32
-    r.line("精选项目 · 技术补充", r.y, 21, bold=True)
-    mascot = ROOT / "assets/resume-xiaoman.webp"
-    if mascot.exists():
-        r.pdf.drawImage(ImageReader(str(mascot)), r.w - 90, r.h - 79,
-                        width=48, height=48, preserveAspectRatio=True, mask="auto")
-    r.y += 34
-    r.para("以下为项目功能与技术机制；个人分工见第 1 页。", "meta")
-    r.section("知友  /  共学与学习支持")
-    r.para("<b>定位：</b>面向 K12 的 AI 通识教育；课程、实践、小队协作与学习反馈衔接。")
-    for text in [
-        "<b>实时共学：</b>React Native / Expo 学生端、React 管理端与 FastAPI 后端；WebRTC 承载屏幕共享和语音，WebSocket 同步消息与协作状态。",
-        "<b>诊断与路径：</b>UKT 以概率知识状态与 Wasserstein 自注意力追踪掌握趋势及不确定性；KnowLP 结合先修、相似关系和学习目标推荐路径。",
-        "<b>知识与记忆：</b>LLM Wiki / RAG 关联知识来源、版本与权限；LightMem 按主题压缩交互并离线巩固。<br/>MemoryOS 分层组织上下文与长期线索（扩展方案）。",
-        "<b>支持时机：</b>CTS 选择复习、鼓励、共学邀请或暂不提示，限制时段与频次，允许关闭。<br/>KnowLP 负责内容与路径，CTS 仅调整支持时机与方式。",
-    ]:
-        r.bullet(text)
-    r.para("学习助手“小满”提供答疑与引导；积分用于协作激励，六维反馈用于学习改进，两者分开呈现。", "meta", gap=6)
-    r.links([("知友代码", ZHIYOU), ("项目资料", SITE + "#knowmate")])
-    r.section("职面AI  /  模拟面试与能力提升")
-    r.para("<b>定位：</b>面向后端、前端、运维三类岗位，形成“面试 - 评估 - 练习 - 成长”的提升流程。")
-    for text in [
-        "<b>知识库与 RAG：</b>三岗题库覆盖技术问答、项目深挖、场景题与行为题。<br/>知识库关联考点、参考答案与评分标准，支撑出题、解析和追问。",
-        "<b>受限追问与编排：</b>AI 面试官在审核题库范围内追问，结合岗位需求、作答上下文和时间预算控制面试节奏。",
-        "<b>多模态交互：</b>支持语音与文本作答，可选视频辅助；摄像头不可用时不阻断面试。语音反馈关注语速、停顿与清晰度。",
-        "<b>证据评估与成长：</b>从作答提取证据，按技术深度、逻辑表达、沟通协作、应变能力、岗位适配五维输出报告；情绪倾向仅作为组成信号。报告连接练习计划、历史记录与成长曲线。",
-    ]:
-        r.bullet(text)
-    r.links([("职面AI代码", JOBFACE), ("官方赛题：AI 模拟面试与能力提升软件", CONTEST)])
-    r.section("更多项目与证明")
-    r.para("法智引擎、乳腺癌影像分析、灵犀学伴、智翎智能学习平台的功能、演示及获奖证明见个人网站。", gap=7)
-    r.links([("项目展示", SITE + "#projects"), ("获奖证明", SITE + "#awards"),
-             ("联系我", "mailto:3583418031@qq.com")])
-    r.para("说明：阶段日期依据原始提交与联调记录。技术补充按设计方案及最新项目说明整理，不将团队整体功能归为个人独立完成，不使用演示数据作为业务指标。", "meta", gap=0)
-    r.footer(2)
+    draw_project_pages(r, ROOT, SITE, CONTEST)
     r.pdf.save()
     print(output)
 
