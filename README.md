@@ -51,4 +51,6 @@
 
 ## 更新简历
 
-`scripts/build_resume.py` 使用 ReportLab 生成一页简历，默认中文字体为 Windows 宋体，可通过 `--font` 指定其他中文 TTF 字体。安装 `reportlab` 后在项目目录运行 `python scripts/build_resume.py`。生成后检查页数、文字提取和页面渲染，再发布更新。内容来源与待补项见 `docs/resume-content-evidence.md`。
+`scripts/build_resume.py` 使用 ReportLab 生成两页 A4 蓝白简历：第一页为个人信息、技能、知友与职面AI的个人贡献及代表荣誉，第二页为两项项目的精选技术补充。正文为可选中的文字，内嵌中文字体并提供邮箱、电话、代码和赛题超链接；小满素材位于 `assets/resume-xiaoman.webp`。默认使用 Windows 微软雅黑，可通过 `--font`、`--bold-font` 指定其他中文 TrueType 字体。
+
+安装 `reportlab` 和 `pillow` 后在项目目录运行 `python scripts/build_resume.py`，输出 `assets/luo-yang-resume.pdf`。生成器会按文字实测高度检查溢出；发布前仍需检查两页渲染、文字提取、链接与字体嵌入。替换 PDF 时同步更新首页下载链接的版本号，避免旧缓存。内容来源与待补项见 `docs/resume-content-evidence.md`。
