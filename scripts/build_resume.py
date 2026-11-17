@@ -10,6 +10,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph
 from resume_project_pages import draw_project_pages
+from resume_header import draw_header
 
 ROOT = Path(__file__).resolve().parents[1]
 BLUE, INK, QUIET, RULE = [colors.HexColor(c) for c in
@@ -95,22 +96,21 @@ class Resume:
         self.line(f"{page} / 3", self.h - 27, 8, x=self.w - self.margin, color=QUIET, right=True)
 
 
+def personal_header(r):
+    draw_header(r.pdf, r.h, ROOT / 'assets/resume-header')
+    r.y = 131
+
+
 def build(font_path, output, bold_path=None):
     pdfmetrics.registerFont(TTFont("CN", str(font_path)))
     pdfmetrics.registerFont(TTFont("CNBold", str(bold_path or font_path)))
     pdfmetrics.registerFontFamily("CN", normal="CN", bold="CNBold")
     output.parent.mkdir(parents=True, exist_ok=True)
     r = Resume(output)
-    r.line("罗洋", 28, 32, bold=True)
-    r.line("AI 全栈工程师 · 实习", 36, 14, x=150, bold=True, color=BLUE)
-    r.line("2027.07 起可到岗 · 意向城市待定", 60, 10, x=150, color=QUIET)
-    r.y = 91
-    r.links([("3583418031@qq.com", "mailto:3583418031@qq.com"),
-             ("18989542495", "tel:18989542495"), ("个人网站", SITE),
-             ("GitHub", "https://github.com/xingchen-ya")])
+    personal_header(r)
     r.section("教育背景")
     r.line("浙江树人学院 · 物联网工程 · 本科在读", r.y, 11, bold=True)
-    r.line("2024.09 - 2028.06（预计）", r.y + 1, 9, x=r.w-r.margin, color=QUIET, right=True)
+    r.line("2024.09 - 2028.06", r.y + 1, 9, x=r.w-r.margin, color=QUIET, right=True)
     r.y += 21
     r.section("核心技能")
     for title, text in [
@@ -121,7 +121,7 @@ def build(font_path, output, bold_path=None):
     ]:
         r.para(f"<b>{title}：</b>{escape(text)}", gap=2)
     r.section("项目经历")
-    r.project("知友（KnowMate）", "2026.08 - 2026.10 · 阶段记录",
+    r.project("知友（KnowMate）", "2026.08 - 2026.10",
               "项目经理 / 移动端开发　 |　 React Native / Expo · TypeScript · FastAPI",
               "面向 K12 学生的 AI 通识教育 App，结合课程、训练、小队共学与学习助手“小满”。",
               ["<b>页面与整合：</b>参与登录、新手引导、个人页与成长报告开发，整合页面、路由与交互。",
@@ -129,7 +129,7 @@ def build(font_path, output, bold_path=None):
                "<b>协作与交付：</b>负责模块分工、成果验收、项目整合，以及演示流程和答辩材料准备。"],
               [("项目代码", ZHIYOU), ("项目资料", SITE + "#knowmate")])
     r.y += 6
-    r.project("职面AI（JobFace AI）", "2026.03 - 2026.09 · 阶段记录",
+    r.project("职面AI（JobFace AI）", "2026.03 - 2026.09",
               "项目经理 / 应用开发　 |　 React Native · TypeScript · LLM / RAG",
               "面向计算机专业学生的模拟面试与能力提升平台，覆盖后端、前端和运维岗位，兼顾求职辅助。",
               ["<b>应用开发：</b>参与简历管理、分析与润色页面及接口接入，组织生成请求、查询和结果展示。",

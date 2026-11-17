@@ -143,8 +143,6 @@ def draw_project_pages(r, root, site, contest):
         c.roundRect(33, r.h-top-19, 65, 19, 8, fill=1, stroke=0)
         text(r, title, 39, top+1, 57, size=11.5, leading=17, bold=True, color=WHITE)
         text(r, value, 109, top+1, r.w-137, size=11.5, leading=17, bold=True)
-    text(r, "技术机制依据设计方案及补充说明整理；MemoryOS 为扩展方案，个人分工见第 1 页。",
-         30, 781, r.w-60, size=8.2, leading=12, color=colors.HexColor("#536176"))
     r.y = 799
     r.footer(2)
 
