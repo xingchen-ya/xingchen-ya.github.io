@@ -94,6 +94,80 @@ def start(r, decorate=True):
         accents(r)
 
 
+def keyword_marks(r, x, top):
+    for offset, color in [(0, '#A7D1FF'), (5, '#1674FF')]:
+        p = r.pdf.beginPath()
+        for i, (dx, dy) in enumerate([(0, 17), (5, 17), (13, 0), (8, 0)]):
+            (p.moveTo if i == 0 else p.lineTo)(x+offset+dx, r.h-top-dy)
+        p.close()
+        r.pdf.setFillColor(colors.HexColor(color))
+        r.pdf.drawPath(p, fill=1, stroke=0)
+
+
+def draw_jobface_card(r, number, title, top, rows, keywords, parts=None):
+    """Reference-matched regular body, gradient tabs and separate keyword pills."""
+    from reportlab.pdfbase import pdfmetrics
+    c = r.pdf
+    boxes = {}
+    def enabled(key):
+        return parts is None or key in parts
+    def fill_shape(path, x, width, stops):
+        c.saveState()
+        c.clipPath(path, stroke=0, fill=0)
+        c.linearGradient(x, 0, x+width, 0, [colors.HexColor(s) for s in stops])
+        c.restoreState()
+    heading = f'{number:02d}  {title}'
+    width = pdfmetrics.stringWidth(heading, 'CNBold', 13.5)+26
+    if enabled('heading-bg'):
+        p = c.beginPath()
+        for i, point in enumerate([(24, r.h-top-22), (24+width-8, r.h-top-22),
+                                  (24+width, r.h-top), (32, r.h-top)]):
+            (p.moveTo if i == 0 else p.lineTo)(*point)
+        p.close()
+        fill_shape(p, 24, width, ['#0066FF', '#073BFF'])
+    boxes['heading-bg'] = (22, top-2, 26+width, top+24)
+    if enabled('heading-text'):
+        text(r, heading, 36, top+1, width-20, size=13.5, leading=18, bold=True, color=WHITE)
+    boxes['heading-text'] = (34, top-1, 26+width, top+23)
+    if enabled('heading-rule'):
+        c.setStrokeColor(BLUE)
+        c.setLineWidth(1.1)
+        c.line(31+width, r.h-top-20, r.w-25, r.h-top-20)
+    boxes['heading-rule'] = (29+width, top+18, r.w-23, top+22)
+    box_top = top+27
+    if enabled('card-bg'):
+        p = c.beginPath()
+        p.roundRect(25, r.h-box_top-86, r.w-50, 86, 10)
+        fill_shape(p, 25, r.w-50, ['#F3F9FF', '#DFEEFF'])
+    boxes['card-bg'] = (23, box_top-2, r.w-23, box_top+88)
+    for i, row in enumerate(rows):
+        y = box_top+6+i*19
+        if enabled('bullets'):
+            c.setFillColor(BLUE)
+            c.circle(40, r.h-y-10, 2.0, fill=1, stroke=0)
+        if enabled('body-text'):
+            h = text(r, row, 55, y, r.w-94, size=12, leading=18.5)
+            if h > 19:
+                raise ValueError(f'JobFace bullet wraps: {row}')
+    boxes['bullets'] = (36, box_top+11, 44, box_top+59)
+    boxes['body-text'] = (53, box_top+4, r.w-37, box_top+64)
+    y = box_top+62
+    pill_width = min(pdfmetrics.stringWidth(keywords, 'CNBold', 11.5)+42, r.w-95)
+    if enabled('keyword-bg'):
+        p = c.beginPath()
+        p.roundRect(43, r.h-y-19, pill_width, 19, 9)
+        fill_shape(p, 43, pill_width, ['#D7EBFF', '#C3DDFF'])
+    boxes['keyword-bg'] = (41, y-2, 45+pill_width, y+21)
+    if enabled('keyword-marks'):
+        keyword_marks(r, 35, y+1)
+    boxes['keyword-marks'] = (33, y-1, 55, y+20)
+    if enabled('keyword-text'):
+        text(r, keywords, 67, y+1, pill_width-26, size=11.5, leading=16, bold=True)
+    boxes['keyword-text'] = (65, y-1, 45+pill_width, y+21)
+    boxes['card-complete'] = (22, top-2, r.w-23, box_top+88)
+    return boxes
+
+
 def draw_jobface_header(r, root, parts=None):
     """Draw the approved project header; parts also support isolated PNG exports."""
     c = r.pdf
@@ -222,8 +296,10 @@ def draw_project_pages(r, root, site, contest):
          "结构化报告 · 个性化练习 · 历史成长曲线"),
     ]
     for i, (title, rows, keywords) in enumerate(groups):
-        card(r, i+1, title, 173+i*117, rows, keywords=keywords)
-    r.y = 772
-    r.links([("官方赛题：AI 模拟面试与能力提升软件（锐捷网络）", contest)])
+        draw_jobface_card(r, i+1, title, 173+i*118, rows, keywords)
+    keyword_marks(r, 27, 773)
+    text(r, '赛题背景：AI 模拟面试与能力提升软件（锐捷网络）',
+         49, 772, r.w-76, size=10.5, leading=16, bold=True)
+    c.linkURL(contest, (49, r.h-790, r.w-26, r.h-771), relative=0)
     r.y = 799
     r.footer(3)
