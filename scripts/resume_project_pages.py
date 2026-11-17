@@ -74,7 +74,7 @@ def card(r, number, title, top, rows, *, keywords=None):
     y = box_top + 6
     for row in rows:
         r.line("•", y+1, size=13, x=38, color=BLUE)
-        height = text(r, row, 55, y, r.w-94, size=12, leading=18.5, bold=True)
+        height = text(r, row, 55, y, r.w-94, size=12, leading=18.5)
         if height > 19:
             raise ValueError(f"Reference card requires one line per bullet: {title}: {row}")
         y += 19
@@ -219,7 +219,7 @@ def draw_project_pages(r, root, site, contest):
     c.setFillColor(BLUE)
     c.rect(25, r.h-133, 5, 105, fill=1, stroke=0)
     text(r, "知友（KnowMate）", 40, 22, 390, size=31, leading=41, bold=True)
-    text(r, "K12 人工智能通识教育 App", 40, 70, 405, size=24, leading=32, bold=True)
+    text(r, "K12 人工智能通识教育 App", 40, 70, 405, size=23, leading=32, bold=True)
     gradient(r, 40, 111, 331, 25, radius=12)
     text(r, "课程学习 · 实践探索 · 小队共学 · 成长反馈", 52, 114, 315,
          size=12, leading=18, bold=True)
