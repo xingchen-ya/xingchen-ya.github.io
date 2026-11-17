@@ -69,7 +69,7 @@ def label(r, title, top):
 def card(r, number, title, top, rows, *, keywords=None):
     label(r, f"{number:02d}  {title}", top)
     box_top = top + 27
-    box_height = 88 if keywords else 72
+    box_height = 82 if keywords else 72
     gradient(r, 25, box_top, r.w-50, box_height)
     y = box_top + 6
     for row in rows:
@@ -87,10 +87,56 @@ def card(r, number, title, top, rows, *, keywords=None):
         text(r, keywords, 67, y+1, width-26, size=11.5, leading=16, bold=True)
 
 
-def start(r):
+def start(r, decorate=True):
     r.pdf.showPage()
     r.margin, r.width, r.y = 26, r.w-52, 30
-    accents(r)
+    if decorate:
+        accents(r)
+
+
+def draw_jobface_header(r, root, parts=None):
+    """Draw the approved project header; parts also support isolated PNG exports."""
+    c = r.pdf
+    boxes = {}
+
+    def enabled(key):
+        return parts is None or key in parts
+
+    def words(key, value, x, top, width, size, leading):
+        if enabled(key):
+            text(r, value, x, top, width, size=size, leading=leading, bold=True)
+        boxes[key] = (x-2, top-2, x+width+2, top+leading+3)
+
+    if enabled('corner-ribbons'):
+        c.drawImage(ImageReader(str(root / 'assets/resume-jobface-ribbons.png')),
+                    r.w-180, r.h-110, width=180, height=110, mask='auto')
+    boxes['corner-ribbons'] = (r.w-180, 0, r.w, 112)
+    if enabled('accent-vertical'):
+        c.setFillColor(BLUE)
+        c.rect(25, r.h-133, 5, 105, fill=1, stroke=0)
+    boxes['accent-vertical'] = (23, 26, 32, 135)
+    words('project-title', '职面AI（JobFace AI）', 40, 22, 390, 31, 41)
+    words('project-subtitle', 'AI 模拟面试与能力提升平台', 40, 70, 405, 23, 32)
+    if enabled('tagline-bg'):
+        gradient(r, 40, 111, 331, 25, radius=12)
+    boxes['tagline-bg'] = (38, 109, 373, 138)
+    words('tagline-text', '模拟面试 · 求职辅助 · 能力提升', 52, 114, 315, 12, 18)
+    boxes['tagline-complete'] = boxes['tagline-bg']
+    if enabled('mascot'):
+        c.drawImage(ImageReader(str(root / 'assets/resume-jobface.png')),
+                    r.w-170, r.h-128, width=132, height=124,
+                    preserveAspectRatio=True, mask='auto')
+    if enabled('mascot-label-bg'):
+        gradient(r, r.w-170, 127, 145, 23, radius=11)
+    boxes['mascot-label-bg'] = (r.w-172, 125, r.w-23, 152)
+    words('mascot-label-text', 'AI 面试官', r.w-157, 130, 133, 12, 17)
+    boxes['mascot-label-complete'] = boxes['mascot-label-bg']
+    if enabled('divider-horizontal'):
+        c.setStrokeColor(BLUE)
+        c.setLineWidth(.6)
+        c.line(26, r.h-157, r.w-26, r.h-157)
+    boxes['divider-horizontal'] = (24, 155, r.w-24, 159)
+    return boxes
 
 
 def draw_project_pages(r, root, site, contest):
@@ -146,15 +192,8 @@ def draw_project_pages(r, root, site, contest):
     r.y = 799
     r.footer(2)
 
-    start(r)
-    text(r, "罗洋", 32, 16, 120, size=37, leading=48, bold=True)
-    gradient(r, 152, 18, 190, 22, radius=11)
-    text(r, "AI 全栈工程师 · 实习", 162, 20, 180, size=13, leading=18, bold=True)
-    text(r, "职面AI（JobFace AI） | 模拟面试 · 求职辅助 · 能力提升", 152, 48,
-         r.w-177, size=10, leading=16, bold=True)
-    text(r, "关键技术与项目亮点", 32, 79, 365, size=27, leading=36, bold=True)
-    c.setStrokeColor(BLUE)
-    c.line(362, r.h-106, r.w-26, r.h-106)
+    start(r, decorate=False)
+    draw_jobface_header(r, root)
     groups = [
         ("岗位知识库与 RAG", [
             "后端、前端、运维三类岗位均已完成题库与知识库建设。",
@@ -183,7 +222,7 @@ def draw_project_pages(r, root, site, contest):
          "结构化报告 · 个性化练习 · 历史成长曲线"),
     ]
     for i, (title, rows, keywords) in enumerate(groups):
-        card(r, i+1, title, 122+i*126, rows, keywords=keywords)
+        card(r, i+1, title, 173+i*117, rows, keywords=keywords)
     r.y = 772
     r.links([("官方赛题：AI 模拟面试与能力提升软件（锐捷网络）", contest)])
     r.y = 799
