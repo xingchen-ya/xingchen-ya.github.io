@@ -11,7 +11,7 @@ def draw_header(c, height, assets, parts=None):
     boxes = {}
     enabled = lambda key: parts is None or key in parts
 
-    def text(key, value, x, top, size, bold=False, color=INK, url=None):
+    def text(key, value, x, top, size, bold=False, color=INK, url=None, tracking=0):
         font = 'CNBold' if bold else 'CN'
         if enabled(key):
             c.setFont(font, size)
@@ -22,25 +22,34 @@ def draw_header(c, height, assets, parts=None):
                 c.drawString(x, height-top-size, prefix)
                 c.setFillColor(color)
                 c.drawString(x+pdfmetrics.stringWidth(prefix+'  ', font, size), height-top-size, rest)
+            elif tracking:
+                run = c.beginText(x, height-top-size)
+                run.setFont(font, size)
+                run.setCharSpace(tracking)
+                run.textOut(value)
+                run.setCharSpace(0)
+                c.drawText(run)
             else:
                 c.drawString(x, height-top-size, value)
-        width = pdfmetrics.stringWidth(value, font, size)
+        width = pdfmetrics.stringWidth(value, font, size) + tracking * max(0, len(value)-1)
         boxes[key] = (x-2, top-2, x+width+2, top+size+5)
         if url and enabled(key):
             c.linkURL(url, (x, height-top-size-3, x+width, height-top+2), relative=0)
         return width
 
-    text('name', '罗洋', 36, 24, 44, True)
+    text('name', '罗洋', 36, 24, 44, True, tracking=6)
     c.setStrokeColor(colors.HexColor('#8C9AB1'))
     c.setLineWidth(.8)
     if enabled('divider-name'):
         c.line(160, height-32, 160, height-76)
     boxes['divider-name'] = (156, 29, 164, 79)
+    intent = '求职意向  AI 全栈工程师 · 实习'
+    badge_width = pdfmetrics.stringWidth(intent, 'CNBold', 12) + 18
     c.setFillColor(colors.HexColor('#D6E7FF'))
     if enabled('job-intent-bg'):
-        c.roundRect(179, height-49, 244, 24, 12, fill=1, stroke=0)
-    text('job-intent-text', '求职意向  AI 全栈工程师 · 实习', 188, 27, 12, True)
-    boxes['job-intent-badge'] = (177, 23, 425, 51)
+        c.roundRect(179, height-49, badge_width, 24, 12, fill=1, stroke=0)
+    text('job-intent-text', intent, 188, 27, 12, True)
+    boxes['job-intent-badge'] = (177, 23, 181+badge_width, 51)
     boxes['job-intent-bg'] = boxes['job-intent-badge']
     text('availability', '2027.07 起可到岗', 185, 55, 12)
     rows = [
