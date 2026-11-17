@@ -129,7 +129,7 @@ def draw_jobface_header(r, root, parts=None):
     if enabled('mascot-label-bg'):
         gradient(r, r.w-170, 127, 145, 23, radius=11)
     boxes['mascot-label-bg'] = (r.w-172, 125, r.w-23, 152)
-    words('mascot-label-text', 'AI 面试官', r.w-157, 130, 133, 12, 17)
+    words('mascot-label-text', 'AI 面试官 · 乔比', r.w-157, 130, 133, 12, 17)
     boxes['mascot-label-complete'] = boxes['mascot-label-bg']
     if enabled('divider-horizontal'):
         c.setStrokeColor(BLUE)
